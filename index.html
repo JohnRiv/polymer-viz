@@ -11,13 +11,18 @@
   <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
   <link rel="import" href="bower_components/google-map/google-map.html">
+  <link rel="import" href="bower_components/point-overlay/point-overlay.html">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body unresolved>
-  <google-map latitude="39.9060613" longitude="-75.1665" zoom="13"
-    styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'>
-  </google-map>
+  <template is="dom-bind">
+    <google-map map="{{map}}" latitude="39.9060613" longitude="-75.1665" zoom="13"
+      styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'>
+    </google-map>
+    <point-overlay map="[[map]]" data='[{"lat": 39.9060613, "lng": -75.1665}]'>
+    </point-overlay>
+  </template>
 </body>
 </html>
