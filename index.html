@@ -12,6 +12,9 @@
 
   <link rel="import" href="bower_components/google-map/google-map.html">
   <link rel="import" href="bower_components/point-overlay/point-overlay.html">
+  <link rel="import" href="bower_components/point-overlay/point-overlay.html">
+  <link rel="import" href="bower_components/paper-card/paper-card.html">
+  <link rel="import" href="bower_components/paper-slider/paper-slider.html">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,8 +24,13 @@
     <google-map map="{{map}}" latitude="39.9060613" longitude="-75.1665" zoom="13"
       styles='[{"stylers":[{"saturation":-85}]},{"featureType":"water","stylers":[{"lightness":-20}]}]'>
     </google-map>
-    <point-overlay map="[[map]]" data='[{"lat": 39.9060613, "lng": -75.1665}]'>
+    <point-overlay map="[[map]]" uniforms="{{uniforms}}" data='[{"lat": 39.9060613, "lng": -75.1665}]'>
     </point-overlay>
+
+    <paper-card elevation="2">
+      <paper-slider min="5" max="100" value="30" immediate-value="{{uniforms.pointSize}}">
+      </paper-slider>
+    </paper-card>
   </template>
 </body>
 </html>
